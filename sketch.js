@@ -1,9 +1,15 @@
 let bgImg;
 let position=1;
 let displayImg;
+let song;
 let xPos=0;
 let delayer=1;
 let imgArr = [];
+
+
+function preload() {
+  song = loadSound('happyMsc.mp3');
+}
 
 function setup() {
   createCanvas(1300, 700);
@@ -11,7 +17,6 @@ function setup() {
   imgArr.push(loadImage('walk1.png'));
   imgArr.push(loadImage('walk2.png'));
   displayImg = imgArr[0];
-  
 }
 
 function draw() {
@@ -41,4 +46,8 @@ function switchPosition(){
     displayImg = imgArr[0];
     position =1;
   }
+}
+
+function mousePressed() {
+  song.play();
 }
